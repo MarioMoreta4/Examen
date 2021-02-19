@@ -1,0 +1,148 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		
+	{
+		int Billetes1000 = 18 * 1000;
+		int Billetes500  = 19 * 500;
+		int Billetes200  = 23 * 200;
+		int Billetes100  = 50 * 50;
+		int Limite = 0;
+		
+		int Suma1000 = 0;
+		int Suma500  = 0;
+		int Suma200  = 0;
+		int Suma100  = 0;
+		
+		int SumaTotal= 0;
+		Console.WriteLine("Digite el numero del banco:");
+		Console.WriteLine("(1) FDP INVERSMENTS");
+		Console.WriteLine("(2) Otro");
+		
+		
+		int Banco = int.Parse(Console.ReadLine());
+		Console.WriteLine("Monto a retirar?");
+		int Monto = int.Parse(Console.ReadLine());
+		
+		 switch (Banco)
+		  {
+			  case 1:
+				  Limite = 20000;
+					 if(Monto > Limite){
+						Console.WriteLine("Este cantidad pasa limite de su transaccion");
+						 break;
+					 }else{
+					 	while(Suma1000 < Monto){
+							if(Suma1000 + 1000 > Monto){
+								break;
+							}else{
+								Suma1000 = Suma1000 + 1000;
+								Billetes1000 = Billetes1000 - Suma1000;
+							}
+						}
+						 SumaTotal = Suma1000;
+						 
+						  while(SumaTotal < Monto){
+							if(SumaTotal + 500 > Monto){
+								break;
+							}else{
+								Suma500 = Suma500 + 500;
+								Billetes500 = Billetes500 - Suma500;
+								SumaTotal = SumaTotal + 500;
+							}
+						}
+						 
+						 while(SumaTotal < Monto){
+							if(SumaTotal + 200 > Monto){
+								break;
+							}else{
+								Suma200 = Suma200 + 200;
+								Billetes200 = Billetes200 - Suma200;
+								SumaTotal = SumaTotal + 200;
+							}
+						}
+						 
+						 while(SumaTotal < Monto){
+							if(SumaTotal + 100 > Monto){
+								break;
+							}else{
+								Suma100 = Suma100 + 100;
+								Billetes100 = Billetes100 - Suma100;
+								SumaTotal = SumaTotal + 100;
+							}
+						}
+						 if(SumaTotal != Monto){
+						 	Console.WriteLine("No podemos dispensar esa cantidad");
+						 }else{
+						 	Console.WriteLine("Se le han sumado " +Suma1000 +" En 1000 pesos");
+							Console.WriteLine("Se le han sumado en " +Suma500 +" En 500 pesos");
+							Console.WriteLine("Se le han sumado en " +Suma200 +" En 200 pesos");
+							Console.WriteLine("Se le han sumado en " +Suma100 +" En 100 pesos");
+							Console.WriteLine(SumaTotal);
+						 }
+					 }
+
+				  break;
+			  case 2:
+				  Limite = 10000;
+					 if(Monto > Limite){
+							Console.WriteLine("Limite de su transaccion");
+							 break;
+						 }else{
+					 	while(Suma1000 < Monto){
+							if(Suma1000 + 1000 > Monto){
+								break;
+							}else{
+								Suma1000 = Suma1000 + 1000;
+							}
+						}
+						 SumaTotal = Suma1000;
+						 
+						  while(SumaTotal < Monto){
+							if(SumaTotal + 500 > Monto){
+								break;
+							}else{
+								Suma500 = Suma500 + 500;
+								SumaTotal = SumaTotal + 500;
+							}
+						}
+						 
+						 while(SumaTotal < Monto){
+							if(SumaTotal + 200 > Monto){
+								break;
+							}else{
+								Suma200 = Suma200 + 200;
+								SumaTotal = SumaTotal + 200;
+							}
+						}
+						 
+						 while(SumaTotal < Monto){
+							if(SumaTotal + 100 > Monto){
+								break;
+							}else{
+								Suma100 = Suma100 + 100;
+								SumaTotal = SumaTotal + 100;
+							}
+						}
+					 }
+				 		if(SumaTotal != Monto){
+						 	Console.WriteLine("No podemos dispensar esa cantidad");
+						 }else{
+						 	Console.WriteLine("Se le han sumado " +Suma1000 +" En 1000 pesos");
+							Console.WriteLine("Se le han sumado en " +Suma500 +" En 500 pesos");
+							Console.WriteLine("Se le han sumado en " +Suma200 +" En 200 pesos");
+							Console.WriteLine("Se le han sumado en " +Suma100 +" En 100 pesos");
+							Console.WriteLine(SumaTotal);
+						 }
+					  break;
+			  default:
+				  Console.WriteLine("Ingrese El Banco Correctamente");
+				  break;
+		  }
+		
+	}
+}
+	}
